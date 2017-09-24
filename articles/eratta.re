@@ -1,10 +1,13 @@
-=== Effective 量子コンピュータ
+=== Effective 量子コンピュータ（第二版）
 
-　
+@<em>{P.7}
+
+ * （誤） //image[cugate][][]
+ * （正） //image[cugate-fixed][][]
+
+=== Effective 量子コンピュータ（初版）
 
 第2章の全面書き直し
-
-　
 
 @<em>{P.10}
 
@@ -73,7 +76,7 @@
  * （誤）@<m>{\left( \frac{ Y + Z \}{2\} \right) e^{- \frac{ \pi \}{ 8 \} iZ\} \left|+ \right> = e^{- \frac{ \pi \}{ 8 \} iY\} \left| + \right> = \left| \frac{ \pi \}{8\} \right>}
  * （正）@<m>{\left( \frac{ Y + Z \}{\sqrt{2\}\} \right) e^{- \frac{ \pi \}{ 8 \} iZ\} \left|+ \right> = e^{- \frac{ \pi \}{ 8 \} iY\} \left| + \right> = \left| \frac{ \pi \}{8\} \right>}
 
-=== 量子コンピュータ手習い
+=== 量子コンピュータ手習い（初版）
 
 @<em>{P.9}
 
