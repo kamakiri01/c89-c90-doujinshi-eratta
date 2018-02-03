@@ -46,6 +46,7 @@ booktitle: 初版正誤表
 # a-bkp, bkp: メディア制作責任者
 # a-clb, clb: 限定参加または補足者
 # a-cmm, cmm: 解釈・分析・考察者
+# a-csl, csl: 監修者
 # a-dsr, dsr: デザイナ
 # a-edt, edt: 編集者
 # a-ill, ill: イラストレータ
@@ -65,12 +66,12 @@ booktitle: 初版正誤表
 # a-trl, trl: 翻訳者
 
 # 刊行日(省略した場合は実行時の日付)
-date: 2016-12-31
+date: 2018-02-03
 # 発行年月。YYYY-MM-DD形式による配列指定。省略した場合はdateを使用する
 # 複数指定する場合は次のように記述する
 # [["初版第1刷の日付", "初版第2刷の日付"], ["第2版第1刷の日付"]]
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
-history: [["2016-12-31"]]
+history: [["2018-02-03"]]
 # 権利表記(配列で複数指定可)
 # rights: (C) 2016 Re:VIEW Developers
 # description: 説明
@@ -82,7 +83,7 @@ history: [["2016-12-31"]]
 # coverage: 内容の範囲や領域(配列で複数指定可)
 
 # デバッグフラグ。nullでないときには一時ファイルをカレントディレクトリに作成し、削除もしない
-debug: null
+debug: true
 
 # 固有IDに使用するドメイン。指定しない場合には、時刻に基づくランダムUUIDが入る
 # urnid: urn:uid:http://example.com/book-title/
@@ -108,7 +109,7 @@ toclevel: 3
 # 採番の設定。採番させたくない見出しには「==[nonum]」のようにnonum指定をする
 #
 # 本文でセクション番号を表示する見出しレベル
-secnolevel: 2
+secnolevel: 0
 
 # 以下のsecnolevelはまだ未実装。
 # 前付でセクション番号を表示する見出しレベル(未実装)
@@ -121,7 +122,7 @@ secnolevel: 2
 # part_secnolevel: 1
 
 # 本文中に目次ページを作成するか。省略した場合はnull (作成しない)
-# toc: true
+toc: true
 
 # EPUB2標準の目次(NCX)以外に物理目次ファイルを作成するか。省略した場合はnull (作成しない)
 # ePUB3においてはこの設定によらず必ず作成される
@@ -136,27 +137,27 @@ secnolevel: 2
 # 表紙の後に大扉ページを作成するか。省略した場合はnull (作成しない)
 # titlepage: null
 #
-# 自動生成される大扉ページを上書きするファイル。ファイル名を指定すると大扉として入る
+# 自動生成される大扉ページを上書きするファイル。ファイル名を指定すると大扉として入る (PDFMaker向けにはLaTeXソース断片、EPUBMaker向けにはHTMLファイル)
 # titlefile: null
 #
-# 原書大扉ページにするHTMLファイル。ファイル名を指定すると原書大扉として入る
+# 原書大扉ページにするHTMLファイル。ファイル名を指定すると原書大扉として入る (PDFMaker向けにはLaTeXソース断片、EPUBMaker向けにはHTMLファイル)
 # originaltitlefile: null
 #
-# 権利表記ページファイル。ファイル名を指定すると権利表記として入る
+# 権利表記ページファイル。ファイル名を指定すると権利表記として入る (PDFMaker向けにはLaTeXソース断片、EPUBMaker向けにはHTMLファイル)
 # creditfile: null
 
 # 奥付を作成するか。デフォルトでは作成されない。trueを指定するとデフォルトの奥付、ファイル名を指定するとそれがcolophon.htmlとしてコピーされる
 # colophon: null
 
-# 裏表紙ファイル (画像はcoversまたはimagesに配置する)。ファイル名を指定すると裏表紙として入る
+# 裏表紙データファイル (PDFMaker向けにはLaTeXソース断片、EPUBMaker向けにはHTMLファイル)
 # backcover: null
 
-# プロフィールページファイル。ファイル名を指定すると著者紹介として入る
+# プロフィールページファイル  (PDFMaker向けにはLaTeXソース断片、EPUBMaker向けにはHTMLファイル)。ファイル名を指定すると著者紹介として入る
 # profile: null
 # プロフィールページの目次上の見出し
 # profiletitle: 著者紹介
 
-# 広告ファイル。ファイル名を指定すると広告として入る
+# 広告ファイル。ファイル名を指定すると広告として入る (PDFMaker向けにはLaTeXソース断片、EPUBMaker向けにはHTMLファイル)
 # advfile: null
 
 # 取り込む画像が格納されているディレクトリ。省略した場合は以下
@@ -171,9 +172,9 @@ secnolevel: 2
 # fontdir内から取り込まれる対象となるファイル拡張子。省略した場合は以下
 # font_ext: ["ttf", "woff", "otf"]
 
-# ソースコードハイライトを利用する (pygmentsには外部gemが必要)
+# ソースコードハイライトを利用する (rouge,pygmentsには外部gemが必要)
 # highlight:
-#   html: "pygments"
+#   html: "rouge"
 #   latex: "listings"
 
 # カタログファイル名を指定する
@@ -273,9 +274,10 @@ epubmaker:
 
 # LaTeX用のスタイルファイル(styディレクトリ以下に置くこと)
 texstyle: reviewmacro
+#texstyle: techbooster-doujin
 #
 # LaTeX用のdocumentclassを指定する
-# texdocumentclass: ["jsbook", "uplatex,oneside"]
+texdocumentclass: ["jsbook", "a5j,uplatex,oneside,9pt"]
 #
 # LaTeX用のコマンドを指定する
 # texcommand: "uplatex"
@@ -300,7 +302,8 @@ pdfmaker:
   #
   # TeXコンパイル前に実行するプログラム。変換後のTeXソースを調整したいときに使用する。
   # 渡される引数1=作業用展開ディレクトリ、引数2=呼び出しを実行したディレクトリ
-  # hook_beforetexcompile: null
+  #hook_beforetexcompile: "echo `\\hypersetup{linkcolor=black}` >> articles/book-pdf/reviewmacro.sty"
+  # hook_beforetexcompile: hook_beforetexcompile.sh
   #
   # TeXコンパイル後に実行するプログラム。索引作業をして再度コンパイルしたいときなどに使用する。
   # 渡される引数1=作業用展開ディレクトリ、引数2=呼び出しを実行したディレクトリ
