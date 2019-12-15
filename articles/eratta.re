@@ -1,10 +1,8 @@
 === Effective 量子コンピュータ
 
-==== 初版 -> 第二版
+==== 初版
 
 第2章の全面書き直し
-
-　
 
 @<em>{P.10}
 
@@ -73,9 +71,82 @@
  * （誤）@<m>{\left( \frac{ Y + Z \}{2\} \right) e^{- \frac{ \pi \}{ 8 \} iZ\} \left|+ \right> = e^{- \frac{ \pi \}{ 8 \} iY\} \left| + \right> = \left| \frac{ \pi \}{8\} \right>}
  * （正）@<m>{\left( \frac{ Y + Z \}{\sqrt{2\}\} \right) e^{- \frac{ \pi \}{ 8 \} iZ\} \left|+ \right> = e^{- \frac{ \pi \}{ 8 \} iY\} \left| + \right> = \left| \frac{ \pi \}{8\} \right>}
 
+==== 第三版
+
+@<em>{P.55}
+
+
+ * （誤）
+//texequation{
+		\left[
+			\begin{array}{cc}
+				0 & 1 \\
+				1 & 0
+			\end{array}
+		\right]
+		\otimes
+		\left[
+			\begin{array}{rr}
+				0 & 1 \\
+				1 & 0
+			\end{array}
+		\right]
+//}
+
+ * （正）
+//texequation{
+		\left[
+			\begin{array}{cc}
+				0 & 1 \\
+				1 & 0
+			\end{array}
+		\right]
+		\otimes
+		\left[
+			\begin{array}{rr}
+				1 & 0 \\
+				0 & 1
+			\end{array}
+		\right]
+//}
+
+ * （誤）
+//texequation{
+		\left[
+			\begin{array}{rr}
+				1 &  0 \\
+				0 & -1
+			\end{array}
+		\right]
+		\otimes
+		\left[
+			\begin{array}{rr}
+				1 &  0 \\
+				0 & -1
+			\end{array}
+		\right]
+//}
+
+ * （正）
+//texequation{
+		\left[
+			\begin{array}{rr}
+				1 & 0 \\
+				0 & 1
+			\end{array}
+		\right]
+		\otimes
+		\left[
+			\begin{array}{rr}
+				1 &  0 \\
+				0 & -1
+			\end{array}
+		\right]
+//}
+
 === 量子コンピュータ手習い
 
-==== 初版 -> 第二版
+==== 初版
 
 @<em>{P.9}
 
@@ -86,6 +157,13 @@
 
  * （誤）@<m>{P_i \neq P^{\dag\}_{i\}}
  * （正）@<m>{P P^\dag \neq I}
+
+==== 第三版
+
+@<em>{P.49}
+
+ * （誤）@<m>{\rho' = p_i M_i \rho {M_i\}^{\dagger\}}
+ * （正）@<m>{\rho' = M_i \rho {M_i\}^{\dagger\} / p_i}
 
 === 量子計算器事始め
 
